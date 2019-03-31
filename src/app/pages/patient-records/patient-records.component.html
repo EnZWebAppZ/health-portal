@@ -1,0 +1,48 @@
+<ng-container *ngIf="patientRecords && patientRecords.length > 0 && patientRecordHeaders">
+
+	<div class="container">
+		<div class="card">
+			<div class="card-body">
+				<div class="row">
+					<div class="col-md-12">
+						<h2>
+							Patient Records by Solomon Lee
+						</h2>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-12">
+						<table class="table">
+							<thead>
+								<tr>
+									<th scope="col">#</th>
+									<th scope="col" *ngFor="let header of patientRecordHeaders">{{header}}</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr *ngFor="let record of patientRecords; index as i">
+									<th scope="row">{{i + 1}}</th>
+									<td>{{record?.UniqueIdentifier}}</td>
+									<td>{{record?.Forenames}}</td>
+									<td>{{record?.Surname}}</td>
+									<td>{{record?.DateOfBirth | date:'medium'}}</td>
+									<td>{{record?.Postcode }}</td>
+								</tr>
+							</tbody>
+						</table>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+
+
+	</div>
+
+
+
+</ng-container>
